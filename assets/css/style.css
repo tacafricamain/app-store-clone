@@ -1,0 +1,352 @@
+/* Link to Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mona Sans', sans-serif;
+    background-color: #f5f5f7;
+    color: rgb(18, 18, 18);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centers the entire navbar */
+    align-items: center;
+    padding: 0 40px; /* Reduced padding from both sides */
+    background-color: #f5f5f7;
+    padding-top: 10px;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 17px;
+    padding-right: 20px;
+     /* Removed right margin to eliminate extra space */
+}
+
+.nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(53, 53, 53); /* Primary text color */
+    font-weight: 500;
+    font-size: 12px;
+    
+}
+
+.nav-link:hover {
+    color: #414141; /* Secondary text color on hover */
+}
+
+/* Search icon styling */
+.search-icon, .shopping-bag {
+    color: black;
+    font-size: 20px;
+    margin-left: 15px; /* Ensure spacing between icons */
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.search-icon:hover, .shopping-bag:hover {
+    cursor: pointer;
+}
+
+/* Shopping bag icon styling */
+.shopping-bag {
+    font-size: 20px;
+    color: rgb(18, 18, 18);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 30px;
+}
+
+.shopping-bag:hover {
+    cursor: pointer;
+}
+
+
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    align-items: center;
+    height: 44vh;
+    padding: 0 110px;
+    background-color: #f5f5f7;
+}
+
+.hero-content {
+    max-width: 1200px;
+    align-items: center;
+}
+
+.title-and-help {
+    display: flex;
+    align-items: right;
+    gap: 300px; /* Space between hero title and help section */
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #6e6e73;
+    line-height: 1.2;
+}
+
+.hero-title span{
+    color: rgb(28, 28, 28);
+}
+
+/* Help Section Styling */
+.help-section {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+.helper-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.help-text {
+    font-size: 0.875rem;
+    color: #101010;
+    font-weight: bold;
+}
+
+/* Support Link Styling */
+.support-link {
+    display: block; /* Places link below help text */
+    font-size: 0.875rem;
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: 400;
+    margin-top: -2px; /* Adds a bit of space above link */
+}
+
+.support-link:hover {
+    text-decoration: none;
+}
+
+.wrapper{
+    display: block;
+}
+
+
+/* Scrollable Product Nav Styling */
+.product-nav-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0px 0;
+    overflow: hidden; /* Hides extra content outside container */
+    width: 100%; /* Full-width container */
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.product-nav {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 8px;
+    padding: 0 110px; /* Matches the overall page padding */
+    width: 100%; /* Ensures the product nav spans 100% */
+    max-width: 100%; /* Prevents overflow beyond the screen */
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+
+.product-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 0 0 calc(100% / 7.3 - 15px); /* 8 items visible within 100% width */
+    box-sizing: border-box;
+    padding: 0 5px; /* Adds padding to prevent images from being cut off */
+}
+
+.product-img {
+    width: 120px; /* Increased image size */
+    height: 120px; /* Match the new width for a square aspect ratio */
+    margin-bottom: 4px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-label {
+    font-size: 0.875rem;
+    color: rgb(19, 19, 19);
+    font-weight: 500;
+}
+
+/* Scroll Button Styling */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 10px;
+    z-index: 9999;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Show buttons on hover */
+.product-nav-section:hover .scroll-btn {
+    display: flex;
+}
+
+/* Hover effect for the scroll button */
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Card Section Styling */
+.card-section {
+    position: relative;
+    padding: 70px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 17px;
+    padding: 0 110px;
+    width: 100%;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    padding: 0 110px;
+    background-color: #f5f5f7;
+    font-size: 1.65rem;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.card {
+    position: relative;
+    flex: 0 0 calc(100% / 2.8 - 15px); /* 3 cards visible at a time */
+    height: 500px; /* Adjust height as needed */
+    background: #d3d3d3; /* Placeholder color for the image background */
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(11.25rem);
+    transition: ease-in-out;
+}
+
+.card:hover {
+    height: 510;
+}
+
+.card-overlay-light {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    color: #ffffff;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background for text */
+    border-radius: 8px;
+    line-height: 26px;
+}
+
+.card-overlay-dark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    color: #101010;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background for text */
+    border-radius: 8px;
+    line-height: 26px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700; /* Bold for the title */
+    margin: 0;
+}
+
+.w-pp{
+    margin-top: 15px;
+    
+}
+
+.pp {
+    font-size: 0.7rem;
+}
+
+.card-text:nth-child(2) {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-text:nth-child(3) {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.card-text:nth-child(4) {
+    font-weight: 400;
+    font-size: 0.76rem;
+}
+
+/* Hide scrollbar */
+.card-container {
+    scrollbar-width: none; /* Firefox */
+}
+.card-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+/* Show buttons on hover */
+.card-section:hover .scroll-btn {
+    display: flex;
+}
+
+.hero-title .title-section span{
+    margin-right: 3px;
+}
+
